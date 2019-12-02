@@ -21,7 +21,7 @@ Outputs:
 Resources:
   PlanAPIFunction:
     Properties:
-      CodeUri: s3://awshackathonreinvent2019team41/f85191fd67837db01471bae0ed286153
+      CodeUri: s3://awshackathonreinvent2019team41/ce19c5b0039bda60a5e116cdeec9e6ef
       Events:
         PlanAPI:
           Properties:

@@ -1,0 +1,54 @@
+{
+    "counsellorid": 0,
+    "plan":
+    {
+        "consentstatus":"1",
+        "phonenumber": "4698671583",
+        "id":123,
+        "categories":
+        [
+          {
+              "name": "Warning Signs",
+              "questions": [
+                {
+                    "qid": "1",
+                    "prompt": "Ask 'How will you know when the safety plan should be used?'",
+                    "qtext": "How will you know when the safety plan should be used?",
+                    "answers": [
+                        {
+                            "anstext":"Having Thoughts about Scary Movies makes me feel sad"
+                        }
+                    ] 
+                }
+              ]
+          },
+          {
+              "name": "Internal Coping Strategies",
+              "questions": [
+                {
+                    "qid": "4",
+                    "prompt": "Ask 'What can you do on your own, if you become suicidal again, to help prevent yourself from acting on your thoughts or urges?'",
+                    "qtext": "What can you do on your own, if you become suicidal again, to help prevent yourself from acting on your thoughts or urges?'",
+                    "answers": 
+                    [
+                        {
+                        "anstext":""
+                        }
+                    ] 
+                },
+                {
+                    "qid": "5",
+                    "prompt": "Assess likelihood of use: Ask 'What do you think is the likelihood that you would be able to do this step during a time of crisis?'",
+                    "qtext": "What do you think is the likelihood that you would be able to do this step during a time of crisis?",
+                    "answers": 
+                    [
+                        {
+                        "anstext":""
+                        }
+                    ] 
+                }            
+              ]
+          }
+        ]
+    }
+  }
