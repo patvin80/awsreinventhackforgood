@@ -14,7 +14,8 @@
                     "qid": "1",
                     "prompt": "Ask 'How will you know when the safety plan should be used?'",
                     "qtext": "How will you know when the safety plan should be used?",
-                    "answers": [
+                    "answers": 
+                    [
                         {
                             "anstext":"Having Thoughts about Scary Movies makes me feel sad"
                         }

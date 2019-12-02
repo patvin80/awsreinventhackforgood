@@ -2,8 +2,8 @@
     "counsellorid": 0,
     "plan":
     {
-        "consentstatus":"1",
-        "phonenumber": "4698671583",
+        "consentstatus":"0",
+        "phonenumber": "",
         "id":123,
         "categories":
         [
