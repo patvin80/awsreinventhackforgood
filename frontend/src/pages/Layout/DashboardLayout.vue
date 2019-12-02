@@ -8,33 +8,29 @@
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
       </sidebar-link>
-      <sidebar-link to="/user">
-        <md-icon>person</md-icon>
-        <p>User Profile</p>
-      </sidebar-link>
       <sidebar-link to="/table">
-        <md-icon>content_paste</md-icon>
-        <p>Table list</p>
+        <md-icon>warning</md-icon>
+        <p>Warning Signs</p>
       </sidebar-link>
       <sidebar-link to="/typography">
-        <md-icon>library_books</md-icon>
-        <p>Typography</p>
-      </sidebar-link>
-      <sidebar-link to="/icons">
-        <md-icon>bubble_chart</md-icon>
-        <p>Icons</p>
+        <md-icon>sentiment_very_satisfied</md-icon>
+        <p>Internal Coping Strategies</p>
       </sidebar-link>
       <sidebar-link to="/maps">
-        <md-icon>location_on</md-icon>
-        <p>Maps</p>
+        <md-icon>people_alt</md-icon>
+        <p>Social Contacts</p>
       </sidebar-link>
       <sidebar-link to="/notifications">
-        <md-icon>notifications</md-icon>
-        <p>Notifications</p>
+        <md-icon>people_outline</md-icon>
+        <p>Family Members or Friends</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade" class="active-pro">
-        <md-icon>unarchive</md-icon>
-        <p>Upgrade to PRO</p>
+      <sidebar-link to="/upgrade">
+        <md-icon>business_center</md-icon>
+        <p>Professionals and Agencies</p>
+      </sidebar-link>
+      <sidebar-link to="/upgrade">
+        <md-icon>healing</md-icon>
+        <p>Making the Environment<br/> Safe</p>
       </sidebar-link>
     </side-bar>
 
