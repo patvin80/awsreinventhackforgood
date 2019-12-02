@@ -109,7 +109,7 @@ export default {
       // const planID = localStorage.getItem('planID')
       const planID = window.planID
       if (planID != null) {
-        return `${this.$route.name} - Viewing Plan ID: ${planID}`
+        return `Viewing Plan ID: ${planID}`
       } else {
         return this.$route.name
       }

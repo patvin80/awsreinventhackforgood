@@ -31,7 +31,6 @@ import {
   OrderedTable
 } from "@/components";
 
-import axios from 'axios';
 
 export default {
   components: {
@@ -70,7 +69,6 @@ export default {
           return res.text()
         })
         .then(json => {
-          debugger
           console.log({ json: JSON.parse(json) })
           // localStorage.setItem('planID', this.planID)
           // localStorage.setItem('planData', JSON.parse(json))
