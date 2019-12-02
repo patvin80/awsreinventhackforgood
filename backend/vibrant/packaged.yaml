@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'vibrant
+
+  Sample SAM Template for vibrant
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Outputs:
+  PlanAPIApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  PlanAPIFunction:
+    Description: Plan API Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PlanAPIFunction
+      - Arn
+Resources:
+  PlanAPIFunction:
+    Properties:
+      CodeUri: s3://awshackathonreinvent2019team41/f85191fd67837db01471bae0ed286153
+      Events:
+        PlanAPI:
+          Properties:
+            Method: get
+            Path: /planapi
+          Type: Api
+      Handler: app.lambda_handler
+      Runtime: python3.7
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
