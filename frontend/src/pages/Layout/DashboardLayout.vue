@@ -12,7 +12,7 @@
         <md-icon>warning</md-icon>
         <p>Warning Signs</p>
       </sidebar-link>
-      <sidebar-link to="/typography">
+      <sidebar-link to="/internal-coping-strategies">
         <md-icon>sentiment_very_satisfied</md-icon>
         <p>Internal Coping Strategies</p>
       </sidebar-link>
