@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <div class="md-layout">
     <!-- <div id="nav">
       <h1>I am a...</h1>
       <router-link to="/user">User</router-link> |
       <router-link to="/counselor">Counselor</router-link>
     </div> -->
-    <router-view/>
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -30,4 +32,9 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.md-layout-item {
+  height: 40px;
+}
 </style>
+
