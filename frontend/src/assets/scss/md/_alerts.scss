@@ -21,7 +21,8 @@
     @include alert-color($gray-color);
 
     &.alert-info{
-      @include alert-color(lighten($brand-info,5%));
+      @include alert-color(lighten($brand-info,0%));
+      opacity: 1;
     }
 
     &.alert-danger{

@@ -8,6 +8,7 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
+import WarningSigns from "@/pages/WarningSigns.vue";
 
 const routes = [
   {
@@ -21,9 +22,9 @@ const routes = [
         component: Dashboard
       },
       {
-        path: "user",
-        name: "User Profile",
-        component: UserProfile
+        path: "warning-signs",
+        name: "Warning Signs",
+        component: WarningSigns
       },
       {
         path: "table",

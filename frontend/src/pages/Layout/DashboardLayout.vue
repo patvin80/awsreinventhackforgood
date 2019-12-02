@@ -8,7 +8,7 @@
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
       </sidebar-link>
-      <sidebar-link to="/table">
+      <sidebar-link to="/warning-signs">
         <md-icon>warning</md-icon>
         <p>Warning Signs</p>
       </sidebar-link>
