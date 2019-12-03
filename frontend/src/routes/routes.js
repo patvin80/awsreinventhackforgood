@@ -1,14 +1,12 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
-import TableList from "@/pages/TableList.vue";
-import Typography from "@/pages/Typography.vue";
-import Icons from "@/pages/Icons.vue";
-import Maps from "@/pages/Maps.vue";
-import Notifications from "@/pages/Notifications.vue";
-import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
+import FamilyMembers from "@/pages/FamilyMembers.vue";
+import ProfessionalAgencies from "@/pages/ProfessionalAgencies.vue";
+import MakingTheEnvironmentSafe from "@/pages/MakingTheEnvironmentSafe.vue";
 import WarningSigns from "@/pages/WarningSigns.vue";
 import InternalCopingStrategies from "@/pages/InternalCopingStragies.vue";
+import SocialContacts from "@/pages/SocialContacts.vue";
 
 const routes = [
   {
@@ -32,32 +30,24 @@ const routes = [
         component: InternalCopingStrategies
       },
       {
-        path: "typography",
-        name: "Typography",
-        component: Typography
+        path: "social-contacts",
+        name: "Social Contacts",
+        component: SocialContacts
       },
       {
-        path: "icons",
-        name: "Icons",
-        component: Icons
+        path: "family-members-or-friends",
+        name: "Family Members",
+        component: FamilyMembers
       },
       {
-        path: "maps",
-        name: "Maps",
-        meta: {
-          hideFooter: true
-        },
-        component: Maps
+        path: "professional-and-agencies",
+        name: "Professional and Agencies",
+        component: ProfessionalAgencies
       },
       {
-        path: "notifications",
-        name: "Notifications",
-        component: Notifications
-      },
-      {
-        path: "upgrade",
-        name: "Upgrade to PRO",
-        component: UpgradeToPRO
+        path: "making-the-environment-safe",
+        name: "Making the Environment Safe",
+        component: MakingTheEnvironmentSafe
       }
     ]
   }
