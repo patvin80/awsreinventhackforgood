@@ -33,8 +33,20 @@
                     "answers": 
                     [
                         {
-                        "anstext":""
-                        }
+                            "anstext":"Taking a Nap makes me feel better",
+                            "actionstatus": "true",
+                            "effectiveness": 5
+                        },
+                        {
+                            "anstext":"Making a phone call to my cousin Brenda",
+                            "actionstatus": "false",
+                            "effectiveness": 0
+                        },
+                        {
+                            "anstext":"Watching a movie of my favorite actor",
+                            "actionstatus": "",
+                            "effectiveness": 0
+                        }                                                
                     ] 
                 },
                 {
@@ -44,11 +56,13 @@
                     "answers": 
                     [
                         {
-                        "anstext":""
+                            "anstext":"I feel confident I can review the plan in a timely fashion",
+                            "actionstatus": "true",
+                            "effectiveness": ""
                         }
                     ] 
                 }            
-              ]
+            ]
           }
         ]
     }

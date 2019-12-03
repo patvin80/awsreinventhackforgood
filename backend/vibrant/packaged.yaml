@@ -5,8 +5,10 @@ Description: 'vibrant
 
   '
 Globals:
+  Api:
+    Cors: '''*'''
   Function:
-    Timeout: 3
+    Timeout: 30
 Outputs:
   PlanAPIApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
@@ -21,7 +23,7 @@ Outputs:
 Resources:
   PlanAPIFunction:
     Properties:
-      CodeUri: s3://awshackathonreinvent2019team41/ce19c5b0039bda60a5e116cdeec9e6ef
+      CodeUri: s3://awshackathonreinvent2019team41/a4255284a11c4129ccd86e109a3ced1b
       Events:
         PlanAPI:
           Properties:
@@ -29,6 +31,59 @@ Resources:
             Path: /planapi
           Type: Api
       Handler: app.lambda_handler
+      Runtime: python3.7
+    Type: AWS::Serverless::Function
+  PlanCreatePostFunction:
+    Properties:
+      CodeUri: s3://awshackathonreinvent2019team41/a4255284a11c4129ccd86e109a3ced1b
+      Events:
+        PlanExecutionAPI:
+          Properties:
+            Method: POST
+            Path: /plansave
+          Type: Api
+      Handler: app.plancreationsave
+      Policies:
+      - AWSLambdaFullAccess
+      Runtime: python3.7
+    Type: AWS::Serverless::Function
+  PlanExecutionGetFunction:
+    Properties:
+      CodeUri: s3://awshackathonreinvent2019team41/a4255284a11c4129ccd86e109a3ced1b
+      Events:
+        PlanExecutionAPI:
+          Properties:
+            Method: get
+            Path: /planexecutiongetapi
+          Type: Api
+      Handler: app.planquestionexecution
+      Runtime: python3.7
+    Type: AWS::Serverless::Function
+  PlanGetFunction:
+    Properties:
+      CodeUri: s3://awshackathonreinvent2019team41/a4255284a11c4129ccd86e109a3ced1b
+      Events:
+        PlanGetAPI:
+          Properties:
+            Method: get
+            Path: /plangetapi
+          Type: Api
+      Handler: app.planquestions
+      Runtime: python3.7
+    Type: AWS::Serverless::Function
+  PlanOutboundCallFunction:
+    Properties:
+      CodeUri: s3://awshackathonreinvent2019team41/a4255284a11c4129ccd86e109a3ced1b
+      Events:
+        PlanExecutionAPI:
+          Properties:
+            Method: GET
+            Path: /planoutboundcall
+          Type: Api
+      Handler: app.planoutboundcall
+      Policies:
+      - AWSLambdaFullAccess
+      - arn:aws:iam::240767507383:policy/AWSVibrantPolicy
       Runtime: python3.7
     Type: AWS::Serverless::Function
 Transform: AWS::Serverless-2016-10-31

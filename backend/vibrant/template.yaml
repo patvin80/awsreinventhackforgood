@@ -8,7 +8,12 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
     Function:
-        Timeout: 3
+        Timeout: 30
+
+    Api:
+        # Allows www.example.com to call these APIs
+        # SAM will automatically add AllowMethods with a list of methods for this API
+        Cors: "'*'"
 
 
 Resources:
@@ -27,6 +32,64 @@ Resources:
                         Path: /planapi
                         Method: get
 
+    PlanGetFunction:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: planapi/
+            Handler: app.planquestions
+            Runtime: python3.7
+
+            Events:
+                PlanGetAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /plangetapi
+                        Method: get
+
+    PlanExecutionGetFunction:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: planapi/
+            Handler: app.planquestionexecution
+            Runtime: python3.7
+
+            Events:
+                PlanExecutionAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /planexecutiongetapi
+                        Method: get
+
+    PlanCreatePostFunction:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: planapi/
+            Handler: app.plancreationsave
+            Runtime: python3.7
+            Policies:
+            - AWSLambdaFullAccess
+            Events:
+                PlanExecutionAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /plansave
+                        Method: POST
+
+    PlanOutboundCallFunction:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: planapi/
+            Handler: app.planoutboundcall
+            Runtime: python3.7
+            Policies:
+            - AWSLambdaFullAccess
+            - arn:aws:iam::240767507383:policy/AWSVibrantPolicy
+            Events:
+                PlanExecutionAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /planoutboundcall
+                        Method: GET             
 Outputs:
 
     PlanAPIApi:
