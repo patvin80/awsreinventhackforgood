@@ -61,7 +61,7 @@ import VueJsonPretty from "vue-json-pretty";
 export default {
   data() {
     return {
-      answers: [""]
+      answers: [""],
       showAlert: false,
     };
   },
