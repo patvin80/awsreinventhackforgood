@@ -27,6 +27,12 @@
             >View list of safety plans that need follow up</p>
           </md-card-header>
           <md-card-content>
+            <div class="alert alert-info">
+              <span>The risk score indicates the caller's use and effectiveness of the safety plan. 
+                The lower the score, the lower risk and the more effective the plan. The higher the score,
+                the higher the risk and the plan isn't working and requires follow-up.
+              </span>
+            </div>
             <ordered-table table-header-color="orange"></ordered-table>
           </md-card-content>
         </md-card>
