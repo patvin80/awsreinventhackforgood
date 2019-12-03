@@ -16,11 +16,11 @@
         <md-icon>sentiment_very_satisfied</md-icon>
         <p>Internal Coping Strategies</p>
       </sidebar-link>
-      <sidebar-link to="/maps">
+      <sidebar-link to="/social-contacts">
         <md-icon>people_alt</md-icon>
         <p>Social Contacts</p>
       </sidebar-link>
-      <sidebar-link to="/notifications">
+      <sidebar-link to="/family-members-or-friends">
         <md-icon>people_outline</md-icon>
         <p>Family Members or Friends</p>
       </sidebar-link>
