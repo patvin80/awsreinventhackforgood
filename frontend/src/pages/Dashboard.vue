@@ -28,7 +28,7 @@
           </md-card-header>
           <md-card-content>
             <div class="alert alert-info">
-              <span>The risk score indicates the caller's use and effectiveness of the safety plan. 
+              <span>The risk score indicates the caller's use and effectiveness of the safety plan.
                 The lower the score, the lower risk and the more effective the plan. The higher the score,
                 the higher the risk and the plan isn't working and requires follow-up.
               </span>
@@ -74,8 +74,12 @@ export default {
   },
   methods: {
     createOrFetchPlan() {
-      if (this.planID === "") {
-        this.generatePlanID();
+      if (this.planID === '') {
+        const planID = this.generatePlanID()
+        console.log({ planID })
+        this.$store.commit('updatePlanID', planID)
+        this.$router.push({ path: 'warning-signs' })
+        return
       }
 
       const url =

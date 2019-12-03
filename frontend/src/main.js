@@ -36,7 +36,26 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     planID: '',
-    planData: {},
+    planData: {
+      "plan": {
+        "consentstatus": "0",
+        "phonenumber": "",
+        "id": '',
+        "categories": [
+          {
+            "name": "Warning Signs",
+            "questions": [
+              {
+                "qid": "1",
+                "prompt": "Ask 'How will you know when the safety plan should be used?'",
+                "qtext": "How will you know when the safety plan should be used?",
+                "answers": [""]
+              }
+            ]
+          },
+        ]
+      }
+    },
   },
   mutations: {
     updatePlanID (state, planID) {
@@ -44,6 +63,9 @@ const store = new Vuex.Store({
     },
     updatePlanData (state, planData) {
       state.planData = planData
+    },
+    addAnswer(state, text) {
+      state.planData.plan.categories[0].questions[0].answers[0] = text
     }
   }
 })
