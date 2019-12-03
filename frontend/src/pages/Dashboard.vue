@@ -60,7 +60,7 @@ export default {
         console.log({ planID })
         // localStorage.setItem('planID', planID)
         window.planID = planID
-        this.$router.push({ path: 'table' })
+        this.$router.push({ path: 'warning-signs' })
       }
 
       const url = 'https://d0dcpgvcla.execute-api.us-east-1.amazonaws.com/Prod/plangetapi?optin=false'
@@ -74,7 +74,7 @@ export default {
           // localStorage.setItem('planData', JSON.parse(json))
           window.planID = this.planID
           window.planData = JSON.parse(json)
-          this.$router.push({ path: 'table' })
+          this.$router.push({ path: 'warning-signs' })
         })
     },
     generatePlanID() {
