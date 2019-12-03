@@ -60,6 +60,7 @@ export default {
         console.log({ planID })
         this.$store.commit('updatePlanID', planID)
         this.$router.push({ path: 'warning-signs' })
+        return
       }
 
       const url = 'https://d0dcpgvcla.execute-api.us-east-1.amazonaws.com/Prod/plangetapi?optin=false'

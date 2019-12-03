@@ -33,8 +33,11 @@
                   </md-field>
                 </form>
               </div>
+              <div class="md-layout-item">
+                <vue-json-pretty :data="$store.state.planData.plan.categories[0].questions[0]" v-if="shouldShowJSON"></vue-json-pretty>
+              </div>
               <div class="md-layout-item md-size-100 text-right">
-                <md-button class="md-raised md-success">Save</md-button>
+                <md-button class="md-raised md-success" @click="addAnswer">Save</md-button>
               </div>
             </div>
           </md-card-content>
@@ -45,18 +48,35 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
+import VueJsonPretty from 'vue-json-pretty'
+
 export default {
-  data() {
-    return {
-      answers: []
-    };
+  // data() {
+  //   return {
+  //     answers: [""]
+  //   };
+  // },
+  components: {
+    VueJsonPretty
   },
-  created() {
-    if (!!this.$store.state.planData) {
-      this.answers.push(...this.$store.state.planData.plan.categories[0].questions[0].answers.map(a => a.anstext))
+  computed: {
+    shouldShowJSON() {
+      return this.answers.length > 0 && !!this.answers[0]
+    },
+    answers() {
+      return this.$store.state.planData.plan.categories[0].questions[0].answers.map(a => a.anstext)
     }
   },
+  // created() {
+  //   if (!!this.$store.state.planData) {
+  //     this.answers = this.$store.state.planData.plan.categories[0].questions[0].answers
+  //   }
+  // },
   methods: {
+    addAnswer(val) {
+      this.$store.commit('addAnswer', val)
+    },
     handleInput(e) {
       let answer = e.target.elements.answer.value;
       let index = e.target.elements.index.value;
