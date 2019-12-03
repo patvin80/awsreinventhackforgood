@@ -31,6 +31,23 @@ import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
 
+import Vuex from 'vuex'
+Vue.use(Vuex);
+const store = new Vuex.Store({
+  state: {
+    planID: '',
+    planData: {},
+  },
+  mutations: {
+    updatePlanID (state, planID) {
+      state.planID = planID
+    },
+    updatePlanData (state, planData) {
+      state.planData = planData
+    }
+  }
+})
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
@@ -50,6 +67,7 @@ new Vue({
   el: "#app",
   render: h => h(App),
   router,
+  store,
   data: {
     Chartist: Chartist
   }

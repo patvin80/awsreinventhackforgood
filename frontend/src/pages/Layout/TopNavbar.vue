@@ -106,8 +106,7 @@ export default {
   },
   computed: {
     topNavText() {
-      // const planID = localStorage.getItem('planID')
-      const planID = window.planID
+      const planID = this.$store.state.planID
       if (planID != null) {
         return `Viewing Plan ID: ${planID}`
       } else {
