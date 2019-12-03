@@ -44,6 +44,10 @@
         </md-card>
       </div>
     </div>
+    <md-dialog-alert
+      :md-active.sync="showAlert"
+      md-content="Your plan has been updated"
+      md-confirm-text="OK" />
   </div>
 </template>
 
@@ -52,11 +56,11 @@
 import VueJsonPretty from 'vue-json-pretty'
 
 export default {
-  // data() {
-  //   return {
-  //     answers: [""]
-  //   };
-  // },
+  data() {
+    return {
+      showAlert: false,
+    };
+  },
   components: {
     VueJsonPretty
   },
@@ -75,6 +79,7 @@ export default {
   // },
   methods: {
     addAnswer(val) {
+      this.showAlert = true
       this.$store.commit('addAnswer', val)
     },
     handleInput(e) {

@@ -34,13 +34,17 @@
                 </form>
               </div>
               <div class="md-layout-item md-size-100 text-right">
-                <md-button class="md-raised md-success">Save</md-button>
+                <md-button class="md-raised md-success" @click="addAnswer">Save</md-button>
               </div>
             </div>
           </md-card-content>
         </md-card>
       </div>
     </div>
+    <md-dialog-alert
+      :md-active.sync="showAlert"
+      md-content="Your plan has been updated"
+      md-confirm-text="OK" />
   </div>
 </template>
 
@@ -48,10 +52,14 @@
 export default {
   data() {
     return {
-      answers: [""]
+      answers: [""],
+      showAlert: false,
     };
   },
   methods: {
+    addAnswer(val) {
+      this.showAlert = true
+    },
     handleInput(e) {
       let answer = e.target.elements.answer.value;
       let index = e.target.elements.index.value;
