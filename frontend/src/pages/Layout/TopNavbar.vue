@@ -2,7 +2,7 @@
   <md-toolbar md-elevation="0" class="md-transparent">
     <div class="md-toolbar-row">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">{{ $route.name }}</h3>
+        <h3 class="md-title">{{ topNavText }}</h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -16,7 +16,7 @@
         </md-button>
 
         <div class="md-collapse">
-          <div class="md-autocomplete">
+          <!-- <div class="md-autocomplete">
             <md-autocomplete
               class="search"
               v-model="selectedEmployee"
@@ -24,7 +24,7 @@
             >
               <label>Search...</label>
             </md-autocomplete>
-          </div>
+          </div> -->
           <md-list>
             <md-list-item href="#/">
               <i class="material-icons">dashboard</i>
@@ -103,6 +103,17 @@ export default {
         "Kevin Malone"
       ]
     };
+  },
+  computed: {
+    topNavText() {
+      // const planID = localStorage.getItem('planID')
+      const planID = window.planID
+      if (planID != null) {
+        return `Viewing Plan ID: ${planID}`
+      } else {
+        return this.$route.name
+      }
+    }
   },
   methods: {
     toggleSidebar() {
