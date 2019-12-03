@@ -52,8 +52,13 @@
 export default {
   data() {
     return {
-      answers: [""]
+      answers: []
     };
+  },
+  created() {
+    if (!!this.$store.state.planData) {
+      this.answers.push(...this.$store.state.planData.plan.categories[0].questions[0].answers.map(a => a.anstext))
+    }
   },
   methods: {
     handleInput(e) {

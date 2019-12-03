@@ -5,8 +5,8 @@
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
       <sidebar-link to="/dashboard">
-        <md-icon>dashboard</md-icon>
-        <p>Dashboard</p>
+        <md-icon>home</md-icon>
+        <p>Home</p>
       </sidebar-link>
       <sidebar-link to="/warning-signs">
         <md-icon>warning</md-icon>
@@ -24,11 +24,11 @@
         <md-icon>people_outline</md-icon>
         <p>Family Members or Friends</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade">
+      <sidebar-link to="/upgrade" :class="linkClass">
         <md-icon>business_center</md-icon>
         <p>Professionals and Agencies</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade">
+      <sidebar-link to="/upgrade" :class="linkClass">
         <md-icon>healing</md-icon>
         <p>Making the Environment<br/> Safe</p>
       </sidebar-link>
@@ -56,6 +56,19 @@ export default {
     DashboardContent,
     ContentFooter,
     MobileMenu
+  },
+  computed: {
+    linkClass() {
+      return this.hasPlanIDSet ? 'disabled' : ''
+    },
+    hasPlanIDSet() {
+      return !!this.$store.state.planID;
+    }
   }
 };
 </script>
+<style scoped>
+.disabled {
+  color: red;
+}
+</style>
