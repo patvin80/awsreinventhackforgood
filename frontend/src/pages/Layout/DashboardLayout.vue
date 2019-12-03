@@ -24,11 +24,11 @@
         <md-icon>people_outline</md-icon>
         <p>Family Members or Friends</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade" :class="linkClass">
+      <sidebar-link to="/professional-and-agencies" :class="linkClass">
         <md-icon>business_center</md-icon>
         <p>Professionals and Agencies</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade" :class="linkClass">
+      <sidebar-link to="/making-the-environment-safe" :class="linkClass">
         <md-icon>healing</md-icon>
         <p>Making the Environment<br/> Safe</p>
       </sidebar-link>

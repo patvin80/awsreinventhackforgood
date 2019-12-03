@@ -5,10 +5,6 @@
         <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">Safety Plan - Warning Signs</h4>
-            <p class="category">
-              Handcrafted by us with
-              <i class="fa fa-heart heart"></i>
-            </p>
           </md-card-header>
           <md-card-content>
             <div class="md-layout">

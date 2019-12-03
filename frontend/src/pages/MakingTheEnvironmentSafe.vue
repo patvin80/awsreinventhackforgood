@@ -4,17 +4,16 @@
       <div class="md-layout-item">
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">Internal Coping Strategies</h4>
+            <h4 class="title">Safety Plan - Making the Environment Safe</h4>
           </md-card-header>
           <md-card-content>
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-100">
                 <div class="alert alert-info">
                   <span>
-                    Welcome to the Safety Plan: Internal coping strategies .
+                    Welcome to the Safety Plan: Making the Environment Safe
                     <br /> In this section, you will work with the caller
-                    to find things he or she can do to take his or her mind off their problems
-                    without contacting another person (relaxation technique, physical activity):
+                    of how he or she can make the environment safe.
                   </span>
                 </div>
               </div>
