@@ -47,6 +47,10 @@
         </md-card>
       </div>
     </div>
+    <md-dialog-alert
+      :md-active.sync="showAlert"
+      md-content="Your plan has been updated"
+      md-confirm-text="OK" />
   </div>
 </template>
 
@@ -58,6 +62,7 @@ export default {
   data() {
     return {
       answers: [""]
+      showAlert: false,
     };
   },
   components: {
@@ -83,7 +88,8 @@ export default {
   // },
   methods: {
     addAnswer(val) {
-      this.$store.commit("addAnswer", val);
+      this.showAlert = true
+      this.$store.commit('addAnswer', val)
     },
     handleInput(e) {
       let answer = e.target.elements.answer.value;
