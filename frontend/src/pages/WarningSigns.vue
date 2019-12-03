@@ -34,7 +34,10 @@
                 </form>
               </div>
               <div class="md-layout-item">
-                <vue-json-pretty :data="$store.state.planData.plan.categories[0].questions[0]" v-if="shouldShowJSON"></vue-json-pretty>
+                <vue-json-pretty
+                  :data="$store.state.planData.plan.categories[0].questions[0]"
+                  v-if="shouldShowJSON"
+                ></vue-json-pretty>
               </div>
               <div class="md-layout-item md-size-100 text-right">
                 <md-button class="md-raised md-success" @click="addAnswer">Save</md-button>
@@ -49,23 +52,28 @@
 
 <script>
 // import { mapState } from 'vuex'
-import VueJsonPretty from 'vue-json-pretty'
+import VueJsonPretty from "vue-json-pretty";
 
 export default {
-  // data() {
-  //   return {
-  //     answers: [""]
-  //   };
-  // },
+  data() {
+    return {
+      answers: [""]
+    };
+  },
   components: {
     VueJsonPretty
   },
   computed: {
     shouldShowJSON() {
-      return this.answers.length > 0 && !!this.answers[0]
+      return this.answers.length > 0 && !!this.answers[0];
     },
     answers() {
-      return this.$store.state.planData.plan.categories[0].questions[0].answers.map(a => a.anstext)
+      let answers = this.$store.state.planData.plan.categories[0].questions[0].answers.map(
+        a => a.anstext
+      );
+      if (answers && answers.length > 0) {
+        this.answers = answers;
+      }
     }
   },
   // created() {
@@ -75,7 +83,7 @@ export default {
   // },
   methods: {
     addAnswer(val) {
-      this.$store.commit('addAnswer', val)
+      this.$store.commit("addAnswer", val);
     },
     handleInput(e) {
       let answer = e.target.elements.answer.value;
