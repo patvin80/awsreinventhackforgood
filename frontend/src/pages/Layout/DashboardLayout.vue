@@ -62,8 +62,7 @@ export default {
       return this.hasPlanIDSet ? 'disabled' : ''
     },
     hasPlanIDSet() {
-      // not reactive
-      return !!window.planID
+      return !!this.$store.state.planID;
     }
   }
 };

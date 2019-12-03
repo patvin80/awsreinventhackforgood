@@ -58,8 +58,7 @@ export default {
       if (this.planID === '') {
         const planID = this.generatePlanID()
         console.log({ planID })
-        // localStorage.setItem('planID', planID)
-        window.planID = planID
+        this.$store.commit('updatePlanID', planID)
         this.$router.push({ path: 'warning-signs' })
       }
 
@@ -70,10 +69,8 @@ export default {
         })
         .then(json => {
           console.log({ json: JSON.parse(json) })
-          // localStorage.setItem('planID', this.planID)
-          // localStorage.setItem('planData', JSON.parse(json))
-          window.planID = this.planID
-          window.planData = JSON.parse(json)
+          this.$store.commit('updatePlanID', this.planID)
+          this.$store.commit('updatePlanData', JSON.parse(json))
           this.$router.push({ path: 'warning-signs' })
         })
     },
